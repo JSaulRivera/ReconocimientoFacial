@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    align-content: center;
+}
+
+#cabecera {
+    height: 20%;
+}
+
+#menu {
+    height: 10%;
+}
+
+#izquierda {
+    height: 40%;
+    float: left;
+    width: 40%;
+    text-align: center;
+}
+
+#leftdown {
+    text-align: justify;
+    width: auto;
+    height: 500px;
+    overflow: scroll;
+}
+
+#derecha {
+    height: 40%;
+    float: right;
+    width: 60%;
+}
+
+#pie {
+    height: 20%;
+    clear: both;
+}

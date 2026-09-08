@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>Registro de Usuario</title>
+
+
+    <!-- FACE API -->
+
+    <script src="/static/Scripts/face-api.js"></script>
+
+
+    <!-- ESTILOS -->
+
+    <link
+        rel="stylesheet"
+        href="/static/css/NuevoUsuarioStyle.css"
+    />
+
+
+    <!-- JAVASCRIPT -->
+
+    <script
+        src="/static/js/NuevoUsuario.js"
+        defer
+    ></script>
+
+</head>
+
+
+<body>
+
+
+    <!-- FONDO DECORATIVO -->
+
+    <div class="background-grid"></div>
+
+
+    <main class="register-container">
+
+
+        <!-- =====================================
+             COLUMNA IZQUIERDA
+             FORMULARIO
+        ====================================== -->
+
+        <section class="register-panel form-panel">
+
+
+            <div class="panel-header">
+
+                <div class="icon-circle">
+                    +
+                </div>
+
+
+                <div>
+
+                    <span class="subtitle">
+                        SISTEMA DE RECONOCIMIENTO
+                    </span>
+
+                    <h1>
+                        Registrar usuario
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOMBRE -->
+
+            <div class="input-group">
+
+                <label for="nom">
+
+                    Nombre completo
+
+                </label>
+
+
+                <input
+                    type="text"
+                    placeholder="Ingrese el nombre"
+                    id="nom"
+                    name="nom"
+                />
+
+            </div>
+
+
+            <!-- USUARIO -->
+
+            <div class="input-group">
+
+                <label for="usr">
+
+                    Usuario
+
+                </label>
+
+
+                <input
+                    type="text"
+                    placeholder="Nombre de usuario"
+                    id="usr"
+                    name="usr"
+                />
+
+            </div>
+
+
+            <!-- CONTRASEÑA -->
+
+            <div class="input-group">
+
+                <label for="psw">
+
+                    Contraseña
+
+                </label>
+
+
+                <input
+                    type="password"
+                    placeholder="Ingrese una contraseña"
+                    id="psw"
+                    name="psw"
+                />
+
+            </div>
+
+
+            <!-- CARGO -->
+
+            <div class="input-group">
+
+                <label for="crg">
+
+                    Tipo de usuario
+
+                </label>
+
+
+                <select
+                    id="crg"
+                    name="crg"
+                >
+
+                    <option value="2">
+                        Usuario
+                    </option>
+
+                    <option value="1">
+                        Administrador
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-info">
+
+                Complete la información y coloque su rostro
+                frente a la cámara para generar su registro biométrico.
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             COLUMNA DERECHA
+             RECONOCIMIENTO FACIAL
+        ====================================== -->
+
+        <section class="register-panel camera-panel">
+
+
+            <div class="camera-header">
+
+                <span class="camera-status-dot"></span>
+
+                <span id="proceso">
+
+                    INICIANDO SISTEMA...
+
+                </span>
+
+            </div>
+
+
+            <!-- CONTENEDOR DE VIDEO -->
+
+            <div class="video-wrapper">
+
+
+                <video
+                    id="video"
+                    autoplay
+                    muted
+                    playsinline
+                    class="redondo"
+                ></video>
+
+
+                <!-- CANVAS PARA LA MALLA -->
+
+                <canvas
+                    id="overlay"
+                ></canvas>
+
+
+                <!-- ESQUINAS TECNOLÓGICAS -->
+
+                <div class="scanner-frame">
+
+                    <span class="corner top-left"></span>
+
+                    <span class="corner top-right"></span>
+
+                    <span class="corner bottom-left"></span>
+
+                    <span class="corner bottom-right"></span>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ESTADO -->
+
+            <div class="detection-info">
+
+
+                <div class="detection-label">
+
+                    <span>
+                        DETECCIÓN FACIAL
+                    </span>
+
+
+                    <span
+                        id="scoreText"
+                    >
+                        0%
+                    </span>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div
+                        id="progressFill"
+                    ></div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- BOTÓN -->
+
+            <button
+                class="subbt"
+                id="btnG"
+                onclick="GuardarImagen()"
+            >
+
+                Registrar usuario
+
+            </button>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ELEMENTO PARA POSIBLES ERRORES -->
+
+    <span
+        id="errorMsg"
+        style="display:none;"
+    ></span>
+
+
+</body>
+
+</html>

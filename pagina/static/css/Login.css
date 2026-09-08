@@ -1,0 +1,1650 @@
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --cyan: #00ffff;
+
+    --cyan-light: #7af2ff;
+
+    --background: #00131f;
+
+    --background-secondary: #001d2e;
+
+    --panel: rgba(0, 30, 48, .70);
+
+    --white: #ffffff;
+
+    --text-secondary: #00ffff88;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+html,
+body {
+
+    width: 100%;
+
+    min-height: 100%;
+
+}
+
+
+body {
+
+    font-family:
+        "Orbitron",
+        "Segoe UI",
+        sans-serif;
+
+    background:
+
+        radial-gradient(
+            circle at top right,
+            #003c5c,
+            #001f33 35%,
+            #00131f 100%
+        );
+
+    color: var(--white);
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   PÁGINA PRINCIPAL
+========================================================= */
+
+.login-page {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   FONDO
+========================================================= */
+
+.background-grid {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .12;
+
+    background-image:
+
+        linear-gradient(
+            #00ffff22 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            #00ffff22 1px,
+            transparent 1px
+        );
+
+    background-size:
+        40px 40px;
+
+}
+
+
+.background-glow {
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    border-radius: 50%;
+
+    filter: blur(140px);
+
+    opacity: .12;
+
+}
+
+
+.glow-one {
+
+    background: #00ffff;
+
+    top: -250px;
+
+    left: -250px;
+
+}
+
+
+.glow-two {
+
+    background: #0077ff;
+
+    bottom: -250px;
+
+    right: -250px;
+
+}
+
+
+/* =========================================================
+   PANEL PRINCIPAL
+========================================================= */
+
+.login-panel {
+
+    width: 100%;
+
+    max-width: 1050px;
+
+    background:
+
+        rgba(
+            0,
+            19,
+            31,
+            .88
+        );
+
+    border:
+
+        1px solid
+        #00ffff33;
+
+    border-radius: 16px;
+
+    box-shadow:
+
+        0 0 35px
+        #00ffff18,
+
+        0 30px 80px
+        #00000088;
+
+    backdrop-filter:
+
+        blur(15px);
+
+    overflow: hidden;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.login-header {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    padding:
+
+        18px 25px;
+
+    border-bottom:
+
+        1px solid
+        #00ffff22;
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.logo-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+
+        1px solid
+        #00ffff88;
+
+    border-radius: 10px;
+
+    background:
+
+        #001d2e;
+
+    color:
+
+        var(--cyan);
+
+    font-size: 22px;
+
+    box-shadow:
+
+        0 0 18px
+        #00ffff33;
+
+}
+
+
+.logo h2 {
+
+    color:
+
+        #ffffff;
+
+    font-size:
+
+        16px;
+
+    letter-spacing:
+
+        2px;
+
+}
+
+
+.logo span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color:
+
+        #00ffff88;
+
+    font-size:
+
+        8px;
+
+    letter-spacing:
+
+        2px;
+
+}
+
+
+/* =========================================================
+   ESTADO DEL SISTEMA
+========================================================= */
+
+.system-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color:
+
+        #00ff88;
+
+    font-size:
+
+        8px;
+
+    letter-spacing:
+
+        1px;
+
+}
+
+
+.status-dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background:
+
+        #00ff55;
+
+    box-shadow:
+
+        0 0 10px
+        #00ff55;
+
+}
+
+
+/* =========================================================
+   CONTENIDO
+========================================================= */
+
+.login-content {
+
+    display: grid;
+
+    grid-template-columns:
+
+        1fr
+        1.2fr;
+
+    gap: 25px;
+
+    padding: 30px;
+
+}
+
+
+/* =========================================================
+   INFORMACIÓN
+========================================================= */
+
+.login-information {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content:
+        center;
+
+}
+
+
+.panel-tag {
+
+    color:
+
+        var(--cyan);
+
+    font-size:
+
+        9px;
+
+    letter-spacing:
+
+        2px;
+
+    opacity:
+
+        .7;
+
+}
+
+
+.login-information h1 {
+
+    margin-top: 18px;
+
+    font-size:
+
+        42px;
+
+    line-height:
+
+        1.15;
+
+    color:
+
+        #ffffff;
+
+}
+
+
+.login-information h1 span {
+
+    display: block;
+
+    color:
+
+        var(--cyan);
+
+    text-shadow:
+
+        0 0 12px
+        #00ffff55;
+
+}
+
+
+.login-information p {
+
+    margin-top: 18px;
+
+    max-width: 400px;
+
+    color:
+
+        #ffffff88;
+
+    font-family:
+
+        "Segoe UI",
+        sans-serif;
+
+    font-size:
+
+        14px;
+
+    line-height:
+
+        1.7;
+
+}
+
+
+/* =========================================================
+   TARJETA DE INFORMACIÓN
+========================================================= */
+
+.info-card {
+
+    margin-top: 35px;
+
+    padding: 15px;
+
+    background:
+
+        #001d2e;
+
+    border:
+
+        1px solid
+        #00ffff22;
+
+    border-radius:
+
+        10px;
+
+}
+
+
+.info-row {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    padding:
+
+        12px 5px;
+
+    border-bottom:
+
+        1px solid
+        #00ffff18;
+
+}
+
+
+.info-row:last-child {
+
+    border-bottom:
+
+        none;
+
+}
+
+
+.info-row span {
+
+    color:
+
+        #00ffff66;
+
+    font-size:
+
+        8px;
+
+}
+
+
+.info-row strong {
+
+    color:
+
+        #ffffff;
+
+    font-size:
+
+        8px;
+
+}
+
+
+.online {
+
+    color:
+
+        #00ff55 !important;
+
+}
+
+
+/* =========================================================
+   TARJETA DE RECONOCIMIENTO
+========================================================= */
+
+.recognition-card {
+
+    padding:
+
+        18px;
+
+    background:
+
+        rgba(
+            0,
+            30,
+            48,
+            .55
+        );
+
+    border:
+
+        1px solid
+        #00ffff33;
+
+    border-radius:
+
+        12px;
+
+    box-shadow:
+
+        0 0 20px
+        #00ffff0d;
+
+}
+
+
+/* =========================================================
+   HEADER RECONOCIMIENTO
+========================================================= */
+
+.recognition-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    margin-bottom:
+
+        15px;
+
+}
+
+
+.recognition-header h3 {
+
+    margin-top:
+
+        6px;
+
+    color:
+
+        #ffffff;
+
+    font-size:
+
+        11px;
+
+    letter-spacing:
+
+        1px;
+
+}
+
+
+/* =========================================================
+   LIVE
+========================================================= */
+
+.live-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap:
+
+        6px;
+
+    color:
+
+        #00ff55;
+
+    font-size:
+
+        8px;
+
+}
+
+
+.live-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+
+        #00ff55;
+
+    box-shadow:
+
+        0 0 8px
+        #00ff55;
+
+}
+
+
+/* =========================================================
+   CÁMARA
+========================================================= */
+
+.camera-container {
+
+    width: 100%;
+
+    height: 310px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    border:
+
+        1px solid
+        #00ffff22;
+
+    border-radius:
+
+        10px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #00344d,
+            #00131f 75%
+        );
+
+}
+
+
+/* VIDEO */
+
+.redondo {
+
+    width:
+
+        280px;
+
+    height:
+
+        280px;
+
+    object-fit:
+
+        cover;
+
+    border-radius:
+
+        50%;
+
+    display:
+
+        block;
+
+    border:
+
+        2px solid
+        #00ffff88;
+
+    box-shadow:
+
+        0 0 30px
+        #00ffff33;
+
+}
+
+
+/* =========================================================
+   MARCO DEL ESCÁNER
+========================================================= */
+
+.face-scanner {
+
+    position: absolute;
+
+    width:
+
+        290px;
+
+    height:
+
+        290px;
+
+    border-radius:
+
+        50%;
+
+    pointer-events:
+
+        none;
+
+}
+
+
+/* =========================================================
+   ESQUINAS
+========================================================= */
+
+.corner {
+
+    position:
+
+        absolute;
+
+    width:
+
+        35px;
+
+    height:
+
+        35px;
+
+}
+
+
+.top-left {
+
+    top: 0;
+
+    left: 0;
+
+    border-top:
+
+        2px solid
+        var(--cyan);
+
+    border-left:
+
+        2px solid
+        var(--cyan);
+
+}
+
+
+.top-right {
+
+    top: 0;
+
+    right: 0;
+
+    border-top:
+
+        2px solid
+        var(--cyan);
+
+    border-right:
+
+        2px solid
+        var(--cyan);
+
+}
+
+
+.bottom-left {
+
+    bottom: 0;
+
+    left: 0;
+
+    border-bottom:
+
+        2px solid
+        var(--cyan);
+
+    border-left:
+
+        2px solid
+        var(--cyan);
+
+}
+
+
+.bottom-right {
+
+    bottom: 0;
+
+    right: 0;
+
+    border-bottom:
+
+        2px solid
+        var(--cyan);
+
+    border-right:
+
+        2px solid
+        var(--cyan);
+
+}
+
+
+/* =========================================================
+   LÍNEA DE ESCANEO
+========================================================= */
+
+.scanner-line {
+
+    position: absolute;
+
+    top:
+
+        0;
+
+    left:
+
+        10%;
+
+    width:
+
+        80%;
+
+    height:
+
+        2px;
+
+    background:
+
+        var(--cyan);
+
+    box-shadow:
+
+        0 0 15px
+        var(--cyan);
+
+    animation:
+
+        scan
+        3s
+        linear
+        infinite;
+
+}
+
+
+@keyframes scan {
+
+    0% {
+
+        top:
+
+            5%;
+
+        opacity:
+
+            0;
+
+    }
+
+
+    10% {
+
+        opacity:
+
+            1;
+
+    }
+
+
+    90% {
+
+        opacity:
+
+            1;
+
+    }
+
+
+    100% {
+
+        top:
+
+            95%;
+
+        opacity:
+
+            0;
+
+    }
+
+}
+
+
+/* =========================================================
+   ESTADO DEL PROCESO
+========================================================= */
+
+.recognition-status {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        center;
+
+    gap:
+
+        10px;
+
+    margin:
+
+        18px 0;
+
+    padding:
+
+        10px;
+
+    border:
+
+        1px solid
+        #00ffff18;
+
+    border-radius:
+
+        8px;
+
+    background:
+
+        #001d2e;
+
+}
+
+
+.recognition-status label {
+
+    color:
+
+        #00ffffaa;
+
+    font-size:
+
+        9px;
+
+}
+
+
+/* =========================================================
+   ICONO DE PROCESAMIENTO
+========================================================= */
+
+.processing-icon {
+
+    width:
+
+        10px;
+
+    height:
+
+        10px;
+
+    border-radius:
+
+        50%;
+
+    background:
+
+        var(--cyan);
+
+    box-shadow:
+
+        0 0 10px
+        var(--cyan);
+
+    animation:
+
+        pulse
+        1.5s
+        infinite;
+
+}
+
+
+@keyframes pulse {
+
+    0% {
+
+        transform:
+
+            scale(.8);
+
+        opacity:
+
+            .4;
+
+    }
+
+
+    50% {
+
+        transform:
+
+            scale(1.2);
+
+        opacity:
+
+            1;
+
+    }
+
+
+    100% {
+
+        transform:
+
+            scale(.8);
+
+        opacity:
+
+            .4;
+
+    }
+
+}
+
+
+/* =========================================================
+   USUARIO
+========================================================= */
+
+.user-detected {
+
+    text-align:
+
+        center;
+
+    margin-bottom:
+
+        15px;
+
+}
+
+
+#labeluser {
+
+    color:
+
+        #00ffff88;
+
+    font-size:
+
+        8px;
+
+    letter-spacing:
+
+        2px;
+
+}
+
+
+#nombreUser {
+
+    margin-top:
+
+        8px;
+
+    color:
+
+        #ffffff;
+
+    font-size:
+
+        16px;
+
+    text-shadow:
+
+        0 0 10px
+        #00ffff44;
+
+}
+
+
+/* =========================================================
+   CONTRASEÑA
+========================================================= */
+
+.password-section {
+
+    margin-top:
+
+        15px;
+
+}
+
+
+#labelpas {
+
+    display:
+
+        block;
+
+    margin-bottom:
+
+        8px;
+
+    color:
+
+        #00ffff88;
+
+    font-size:
+
+        8px;
+
+    letter-spacing:
+
+        1px;
+
+}
+
+
+#psw {
+
+    width:
+
+        100%;
+
+    padding:
+
+        13px;
+
+    background:
+
+        #00131f;
+
+    border:
+
+        1px solid
+        #00ffff33;
+
+    border-radius:
+
+        7px;
+
+    color:
+
+        #ffffff;
+
+    outline:
+
+        none;
+
+    font-family:
+
+        "Orbitron",
+        sans-serif;
+
+}
+
+
+#psw::placeholder {
+
+    color:
+
+        #ffffff44;
+
+}
+
+
+#psw:focus {
+
+    border-color:
+
+        var(--cyan);
+
+    box-shadow:
+
+        0 0 12px
+        #00ffff22;
+
+}
+
+
+/* =========================================================
+   BOTÓN
+========================================================= */
+
+.subbt {
+
+    width:
+
+        100%;
+
+    margin-top:
+
+        15px;
+
+    padding:
+
+        14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    background:
+
+        #002944;
+
+    border:
+
+        1px solid
+        #00ffff55;
+
+    border-radius:
+
+        7px;
+
+    color:
+
+        var(--cyan);
+
+    cursor:
+
+        pointer;
+
+    font-family:
+
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+
+        9px;
+
+    letter-spacing:
+
+        1px;
+
+    transition:
+
+        .25s;
+
+}
+
+
+.subbt:hover {
+
+    background:
+
+        #003c5c;
+
+    border-color:
+
+        var(--cyan);
+
+    box-shadow:
+
+        0 0 18px
+        #00ffff33;
+
+    transform:
+
+        translateY(-2px);
+
+}
+
+
+.button-arrow {
+
+    font-size:
+
+        15px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.login-footer {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    padding:
+
+        12px 25px;
+
+    border-top:
+
+        1px solid
+        #00ffff18;
+
+    color:
+
+        #00ffff44;
+
+    font-size:
+
+        7px;
+
+    letter-spacing:
+
+        1px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 850px) {
+
+
+    .login-content {
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+
+    .login-information {
+
+        text-align:
+
+            center;
+
+        align-items:
+
+            center;
+
+    }
+
+
+    .login-information h1 {
+
+        font-size:
+
+            35px;
+
+    }
+
+
+    .info-card {
+
+        width:
+
+            100%;
+
+        max-width:
+
+            500px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MÓVIL
+========================================================= */
+
+@media (max-width: 600px) {
+
+
+    .login-page {
+
+        padding:
+
+            12px;
+
+    }
+
+
+    .login-header {
+
+        padding:
+
+            15px;
+
+    }
+
+
+    .system-status {
+
+        display:
+
+            none;
+
+    }
+
+
+    .login-content {
+
+        padding:
+
+            15px;
+
+    }
+
+
+    .login-information h1 {
+
+        font-size:
+
+            28px;
+
+    }
+
+
+    .camera-container {
+
+        height:
+
+            280px;
+
+    }
+
+
+    .redondo {
+
+        width:
+
+            230px;
+
+        height:
+
+            230px;
+
+    }
+
+
+    .face-scanner {
+
+        width:
+
+            240px;
+
+        height:
+
+            240px;
+
+    }
+
+
+    .login-footer {
+
+        flex-direction:
+
+            column;
+
+        gap:
+
+            6px;
+
+        text-align:
+
+            center;
+
+    }
+
+}
+
+/* =========================================
+   VIDEO Y CANVAS DE RECONOCIMIENTO
+========================================= */
+
+.video-wrapper {
+
+    position: relative;
+
+    width: 280px;
+
+    height: 280px;
+
+}
+
+
+.video-wrapper .redondo {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+#overlay {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+}
+
+
+.face-scanner {
+
+    z-index: 6;
+
+}
+.video-wrapper {
+
+    position: relative;
+
+    width: 280px;
+
+    height: 280px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+}

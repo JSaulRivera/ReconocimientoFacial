@@ -1,0 +1,781 @@
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+
+    --background: #020817;
+
+    --panel: rgba(7, 25, 52, 0.82);
+
+    --panel-border: rgba(0, 217, 255, 0.18);
+
+    --primary: #00d9ff;
+
+    --primary-dark: #0077ff;
+
+    --text: #ffffff;
+
+    --text-secondary: #94a3b8;
+
+    --input: rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--text);
+
+    background:
+
+        radial-gradient(
+            circle at top left,
+            #0b2c5e 0%,
+            transparent 40%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            #062850 0%,
+            transparent 40%
+        ),
+
+        var(--background);
+
+}
+
+
+/* =========================================
+   FONDO TECNOLÓGICO
+========================================= */
+
+.background-grid {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.12;
+
+    background-image:
+
+        linear-gradient(
+            rgba(0, 217, 255, 0.15) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(0, 217, 255, 0.15) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        50px 50px;
+
+}
+
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+========================================= */
+
+.register-container {
+
+    position: relative;
+
+    z-index: 1;
+
+    width: min(1100px, 92%);
+
+    min-height: 620px;
+
+    margin: auto;
+
+    padding: 40px 0;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 25px;
+
+    align-items: stretch;
+
+}
+
+
+/* =========================================
+   PANEL GENERAL
+========================================= */
+
+.register-panel {
+
+    position: relative;
+
+    padding: 40px;
+
+    border:
+
+        1px solid
+        var(--panel-border);
+
+    border-radius: 22px;
+
+    background:
+        var(--panel);
+
+    backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+
+        0 20px 60px
+        rgba(0, 0, 0, 0.35);
+
+}
+
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.panel-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.icon-circle {
+
+    width: 52px;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    color: var(--primary);
+
+    border:
+        1px solid
+        rgba(0, 217, 255, 0.5);
+
+    background:
+        rgba(0, 217, 255, 0.08);
+
+    box-shadow:
+        0 0 20px
+        rgba(0, 217, 255, 0.18);
+
+}
+
+
+.subtitle {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: var(--primary);
+
+}
+
+
+h1 {
+
+    margin: 0;
+
+    font-size: 28px;
+
+}
+
+
+/* =========================================
+   FORMULARIO
+========================================= */
+
+.input-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+
+    color: var(--text-secondary);
+
+}
+
+
+.input-group input,
+
+.input-group select {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border-radius: 10px;
+
+    border:
+
+        1px solid
+        rgba(148, 163, 184, 0.2);
+
+    outline: none;
+
+    background:
+        var(--input);
+
+    color:
+        var(--text);
+
+    font-size: 14px;
+
+    transition:
+        0.25s ease;
+
+}
+
+
+.input-group input::placeholder {
+
+    color:
+        #64748b;
+
+}
+
+
+.input-group input:focus,
+
+.input-group select:focus {
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+
+        0 0 0 3px
+        rgba(0, 217, 255, 0.08);
+
+}
+
+
+.input-group select option {
+
+    background:
+        #0b1d38;
+
+    color:
+        white;
+
+}
+
+
+/* =========================================
+   INFORMACIÓN
+========================================= */
+
+.form-info {
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    border-left:
+
+        3px solid
+        var(--primary);
+
+    border-radius: 6px;
+
+    background:
+
+        rgba(0, 217, 255, 0.05);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+/* =========================================
+   CÁMARA
+========================================= */
+
+.camera-panel {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.camera-header {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    color:
+        var(--primary);
+
+}
+
+
+.camera-status-dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background:
+        #00ff88;
+
+    box-shadow:
+
+        0 0 12px
+        #00ff88;
+
+}
+
+
+/* =========================================
+   VIDEO
+========================================= */
+
+.video-wrapper {
+
+    position: relative;
+
+    width: 300px;
+
+    height: 300px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background:
+        #000;
+
+    border:
+
+        2px solid
+        rgba(0, 217, 255, 0.45);
+
+    box-shadow:
+
+        0 0 25px
+        rgba(0, 217, 255, 0.18),
+
+        inset
+        0 0 30px
+        rgba(0, 217, 255, 0.08);
+
+}
+
+
+.redondo {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transform:
+        scaleX(-1);
+
+}
+
+
+/* =========================================
+   CANVAS
+========================================= */
+
+#overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 3;
+
+    transform: scaleX(-1);
+
+}
+
+
+/* =========================================
+   MARCO DEL ESCÁNER
+========================================= */
+
+.scanner-frame {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 4;
+
+    pointer-events: none;
+
+}
+
+
+.corner {
+
+    position: absolute;
+
+    width: 35px;
+
+    height: 35px;
+
+    border-color:
+        var(--primary);
+
+}
+
+
+.top-left {
+
+    top: 15px;
+
+    left: 15px;
+
+    border-top: 2px solid;
+
+    border-left: 2px solid;
+
+}
+
+
+.top-right {
+
+    top: 15px;
+
+    right: 15px;
+
+    border-top: 2px solid;
+
+    border-right: 2px solid;
+
+}
+
+
+.bottom-left {
+
+    bottom: 15px;
+
+    left: 15px;
+
+    border-bottom: 2px solid;
+
+    border-left: 2px solid;
+
+}
+
+
+.bottom-right {
+
+    bottom: 15px;
+
+    right: 15px;
+
+    border-bottom: 2px solid;
+
+    border-right: 2px solid;
+
+}
+
+
+/* =========================================
+   PROGRESO
+========================================= */
+
+.detection-info {
+
+    width: 300px;
+
+    margin-top: 30px;
+
+}
+
+
+.detection-label {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+#scoreText {
+
+    color:
+        var(--primary);
+
+}
+
+
+.progress-bar {
+
+    width: 100%;
+
+    height: 6px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+}
+
+
+#progressFill {
+
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #0077ff,
+            #00d9ff
+        );
+
+    box-shadow:
+
+        0 0 12px
+        rgba(0, 217, 255, 0.7);
+
+    transition:
+        width 0.3s ease;
+
+}
+
+
+/* =========================================
+   BOTÓN
+========================================= */
+
+.subbt {
+
+    display: none;
+
+    width: 300px;
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    color: #001018;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #00d9ff,
+            #00a8ff
+        );
+
+    box-shadow:
+
+        0 8px 25px
+        rgba(0, 217, 255, 0.25);
+
+    transition:
+        0.25s ease;
+
+}
+
+
+.subbt:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+
+        0 12px 30px
+        rgba(0, 217, 255, 0.4);
+
+}
+
+
+.subbt:active {
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 850px) {
+
+    .register-container {
+
+        grid-template-columns:
+            1fr;
+
+        padding:
+            25px 0;
+
+    }
+
+
+    .register-panel {
+
+        padding:
+            30px 25px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .video-wrapper {
+
+        width: 250px;
+
+        height: 250px;
+
+    }
+
+
+    .detection-info,
+
+    .subbt {
+
+        width: 250px;
+
+    }
+
+
+    h1 {
+
+        font-size:
+            23px;
+
+    }
+
+}

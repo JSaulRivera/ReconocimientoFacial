@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Configuración de catálogo</title>
+
+    <link rel="stylesheet" href="/static/css/Catalogo.css">
+    <link rel="stylesheet" href="/static/css/Contenedores.css">
+    <link rel="stylesheet" href="/static/css/ConfiguracionCatalogo.css">
+
+    <script src="/static/js/ConfigurarCatalogo.js" defer></script>
+</head>
+
+<body>
+
+    <!-- FONDO DECORATIVO -->
+    <div class="background-grid"></div>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="brand">
+
+            <div class="logo-container">
+                <img src="/static/img/SIGSA.png"
+                     alt="SIGSA"
+                     class="logo">
+            </div>
+
+            <div class="brand-text">
+
+                <span class="system-name">
+                    SISTEMA DE GESTIÓN
+                </span>
+
+                <h1>
+                    Configuración del catálogo
+                </h1>
+
+            </div>
+
+        </div>
+
+
+        <div class="navbar-actions">
+
+            <!-- Fecha -->
+            <div class="date-container">
+
+                <span class="status-dot"></span>
+
+                <span id="fechaActual"></span>
+
+            </div>
+
+
+            <!-- Regresar -->
+            <a href="Catalogo.html"
+               class="btn-home">
+
+                ← Página principal
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         CONTENIDO PRINCIPAL
+    ========================== -->
+
+    <main class="dashboard-container">
+
+
+        <!-- ENCABEZADO -->
+        <section class="page-header">
+
+            <div>
+
+                <span class="section-label">
+                    ADMINISTRACIÓN DEL SISTEMA
+                </span>
+
+                <h2>
+                    Configuración de aplicaciones
+                </h2>
+
+                <p>
+                    Administra, agrega y organiza las aplicaciones disponibles.
+                </p>
+
+            </div>
+
+
+            <div class="system-status">
+
+                <span class="status-dot"></span>
+
+                Sistema activo
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PANEL PRINCIPAL
+        ========================== -->
+
+        <section class="config-grid">
+
+
+            <!-- =========================
+                 LISTA IZQUIERDA
+            ========================== -->
+
+            <aside class="panel applications-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-label">
+                            APLICACIONES
+                        </span>
+
+                        <h3>
+                            Orden de aplicaciones
+                        </h3>
+
+                    </div>
+
+                    <span class="drag-info">
+                        ↕ Arrastra para ordenar
+                    </span>
+
+                </div>
+
+
+                <div id="leftdown">
+
+                    <ul class="draggable-list"
+                        id="draggable-list">
+                    </ul>
+
+                </div>
+
+            </aside>
+
+
+
+            <!-- =========================
+                 FORMULARIO
+            ========================== -->
+
+            <section class="panel form-panel">
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-label">
+                            INFORMACIÓN
+                        </span>
+
+                        <h3>
+                            Configuración de página
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="formulario">
+
+
+                    <!-- ID -->
+
+                    <div class="input-group">
+
+                        <label class="formulario__label">
+                            ID
+                        </label>
+
+                        <input
+                            class="formulario__input"
+                            id="id"
+                            type="text"
+                            placeholder="ID de la aplicación"
+                            readonly>
+
+                    </div>
+
+
+
+                    <!-- TITULO -->
+
+                    <div class="input-group">
+
+                        <label class="formulario__label">
+                            Título
+                        </label>
+
+                        <input
+                            class="formulario__input"
+                            id="titulo"
+                            type="text"
+                            placeholder="Nombre de la aplicación">
+
+                    </div>
+
+
+
+                    <!-- DESCRIPCION -->
+
+                    <div class="input-group">
+
+                        <label class="formulario__label">
+                            Descripción
+                        </label>
+
+                        <textarea
+                            class="formulario__input textarea"
+                            id="descripcion"
+                            rows="4"
+                            placeholder="Descripción de la aplicación"></textarea>
+
+                    </div>
+
+
+
+                    <!-- URL -->
+
+                    <div class="input-group">
+
+                        <label class="formulario__label">
+                            Dirección URL
+                        </label>
+
+                        <input
+                            class="formulario__input"
+                            id="direccion_url"
+                            type="text"
+                            placeholder="URL de la aplicación">
+
+                    </div>
+
+
+
+                    <!-- IMAGEN -->
+
+                    <div class="input-group">
+
+                        <label class="formulario__label">
+                            Imagen
+                        </label>
+
+
+                        <div class="image-upload-container">
+
+
+                            <label class="file-button">
+
+                                <span>
+                                    📁 Seleccionar imagen
+                                </span>
+
+                                <input
+                                    type="file"
+                                    id="fileInput"
+                                    multiple
+                                    onchange="showname()">
+
+                            </label>
+
+
+                            <div class="image-preview">
+
+                                <img
+                                    id="img1"
+                                    alt="Vista previa de la imagen">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- COLOR -->
+
+                    <div class="input-group">
+
+                        <label class="formulario__label">
+                            Color de la aplicación
+                        </label>
+
+
+                        <div class="color-container">
+
+                            <input
+                                class="formulario__color"
+                                type="color"
+                                id="color"
+                                value="#000000">
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- BOTONES -->
+
+                    <div class="buttons-container">
+
+
+                        <button
+                            class="formulario__btn btn-add"
+                            id="btnEnviar"
+                            onclick="InsertarDatos()">
+
+                            ＋ Agregar
+
+                        </button>
+
+
+                        <button
+                            class="formulario__btn btn-update"
+                            id="btnAcualizar"
+                            onclick="ActualizarDatos()">
+
+                            ↻ Actualizar
+
+                        </button>
+
+
+                        <button
+                            class="formulario__btn btn-delete"
+                            id="btnEliminar"
+                            onclick="EliminarDatos()">
+
+                            🗑 Eliminar
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <span>
+            Sistema de Gestión
+        </span>
+
+        <span>
+            Configuración del catálogo de aplicaciones
+        </span>
+
+    </footer>
+
+
+
+    <!-- FECHA -->
+
+    <script>
+
+        const fecha = new Date().toLocaleDateString(
+            'es-MX',
+            {
+                day: '2-digit',
+                month: 'long',
+                year: 'numeric'
+            }
+        );
+
+        document.getElementById(
+            'fechaActual'
+        ).textContent = fecha;
+
+    </script>
+
+<!-- =====================================================
+     NOTIFICACIÓN PERSONALIZADA
+===================================================== -->
+
+<div id="modalNotificacion" class="modal-notificacion">
+    <div class="modal-contenido">
+
+        <div id="modalIcono" class="modal-icono">
+            ✓
+        </div>
+
+        <h3 id="modalTitulo">
+            Operación realizada
+        </h3>
+
+        <p id="modalMensaje">
+            El contenido de la notificación aparecerá aquí.
+        </p>
+
+        <button
+            id="btnCerrarModal"
+            class="modal-btn"
+            type="button"
+        >
+            Aceptar
+        </button>
+
+    </div>
+</div>
+
+<!-- =====================================================
+     MODAL DE CONFIRMACIÓN PARA ELIMINAR
+===================================================== -->
+
+<div
+    id="modalConfirmacion"
+    class="modal-notificacion"
+>
+    <div class="modal-contenido modal-confirmacion">
+
+        <div
+            id="confirmacionIcono"
+            class="modal-icono icono-advertencia"
+        >
+            !
+        </div>
+
+        <h3>
+            Confirmar eliminación
+        </h3>
+
+        <p>
+            ¿Está seguro de eliminar la aplicación seleccionada?
+        </p>
+
+        <div class="confirmacion-botones">
+
+            <button
+                id="btnCancelarEliminar"
+                class="btn-cancelar"
+                type="button"
+            >
+                Cancelar
+            </button>
+
+            <button
+                id="btnConfirmarEliminar"
+                class="btn-eliminar"
+                type="button"
+            >
+                Eliminar
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+
+</html>

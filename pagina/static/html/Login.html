@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reconocimiento Facial</title>
+
+
+    <!-- FACE API -->
+
+    <script src="/static/Scripts/face-api.js"></script>
+
+    <script src="/static/js/FaceRecognition.js" defer>
+    </script>
+
+
+    <!-- ESTILOS -->
+
+    <link rel="stylesheet" href="/static/css/Login.css">
+
+    <link rel="stylesheet" href="/static/css/faceRecognition.css">
+
+</head>
+
+
+<body>
+
+
+    <div class="login-page">
+
+
+        <!-- FONDO DECORATIVO -->
+
+        <div class="background-grid"></div>
+
+        <div class="background-glow glow-one"></div>
+
+        <div class="background-glow glow-two"></div>
+
+
+
+        <!-- PANEL PRINCIPAL -->
+
+        <section class="login-panel">
+
+
+            <!-- CABECERA -->
+
+            <div class="login-header">
+
+
+                <div class="logo">
+
+                    <div class="logo-icon">
+
+                        ◉
+
+                    </div>
+
+
+                    <div>
+
+                        <h2>SISTEMA</h2>
+
+                        <span>
+                            CONTROL DE ACCESO
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="system-status">
+
+                    <span class="status-dot"></span>
+
+                    SISTEMA ACTIVO
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- CONTENIDO -->
+
+            <div class="login-content">
+
+
+                <!-- INFORMACIÓN -->
+
+                <div class="login-information">
+
+
+                    <div class="panel-tag">
+
+                        AUTENTICACIÓN BIOMÉTRICA
+
+                    </div>
+
+
+                    <h1>
+
+                        Reconocimiento
+
+                        <span>Facial</span>
+
+                    </h1>
+
+
+                    <p>
+
+                        Posicione su rostro frente a la cámara
+                        para iniciar el proceso de autenticación.
+
+                    </p>
+
+
+                    <!-- INFORMACIÓN DEL SISTEMA -->
+
+                    <div class="info-card">
+
+
+                        <div class="info-row">
+
+                            <span>
+                                TECNOLOGÍA
+                            </span>
+
+                            <strong>
+                                FACE API
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-row">
+
+                            <span>
+                                MÉTODO
+                            </span>
+
+                            <strong>
+                                BIOMÉTRICO
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-row">
+
+                            <span>
+                                ESTADO
+                            </span>
+
+                            <strong class="online">
+
+                                ● EN LÍNEA
+
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- RECONOCIMIENTO -->
+
+                <div class="recognition-card">
+
+
+                    <!-- HEADER -->
+
+                    <div class="recognition-header">
+
+
+                        <div>
+
+                            <span class="panel-tag">
+
+                                CÁMARA PRINCIPAL
+
+                            </span>
+
+
+                            <h3>
+
+                                IDENTIFICACIÓN FACIAL
+
+                            </h3>
+
+                        </div>
+
+
+                        <div class="live-status">
+
+                            <span class="live-dot"></span>
+
+                            LIVE
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- CÁMARA -->
+
+                    <div class="camera-container">
+
+                        <div class="video-wrapper">
+
+                            <video id="video" autoplay muted playsinline class="redondo">
+                            </video>
+
+                            <canvas id="overlay"></canvas>
+
+                            <div class="face-scanner">
+
+                                <div class="scanner-line"></div>
+
+                                <span class="corner top-left"></span>
+                                <span class="corner top-right"></span>
+                                <span class="corner bottom-left"></span>
+                                <span class="corner bottom-right"></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ESTADO -->
+
+                    <div class="recognition-status">
+
+
+                        <div class="processing-icon">
+
+                            <span></span>
+
+                        </div>
+
+
+                        <label id="proceso">
+
+                            Inicializando reconocimiento...
+
+                        </label>
+
+
+                    </div>
+
+
+
+                    <!-- USUARIO DETECTADO -->
+
+                    <div class="user-detected">
+
+
+                        <label id="labeluser">
+
+                            USUARIO IDENTIFICADO
+
+                        </label>
+
+
+                        <div id="nombreUser">
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- CONTRASEÑA -->
+
+                    <div class="password-section">
+
+
+                        <label id="labelpas">
+
+                            CONTRASEÑA
+
+                        </label>
+
+
+                        <input type="password" placeholder="Ingrese su contraseña" name="pwd" required id="psw">
+
+
+                    </div>
+
+
+
+                    <!-- BOTÓN -->
+
+                    <button class="subbt" type="button" onclick="ValidarUsuario()">
+
+
+                        <span>
+
+                            ACCEDER AL SISTEMA
+
+                        </span>
+
+
+                        <strong>
+
+                            →
+
+                        </strong>
+
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <div class="login-footer">
+
+
+                <span>
+
+                    SISTEMA DE SEGURIDAD BIOMÉTRICA
+
+                </span>
+
+
+                <span>
+
+                    FACE RECOGNITION SYSTEM
+
+                </span>
+
+
+            </div>
+
+
+        </section>
+
+
+    </div>
+
+
+</body>
+
+</html>

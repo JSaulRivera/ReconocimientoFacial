@@ -1,0 +1,20 @@
+#overlay {
+
+    position: absolute;
+
+    pointer-events: none;
+
+}
+.video-wrapper {
+
+    position: relative;
+
+    width: 280px;
+
+    height: 280px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Catálogo de aplicaciones</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/Catalogo.css"
+    >
+
+    <script
+        src="/static/js/Catalogo.js"
+        defer
+    ></script>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         ENCABEZADO
+    ========================== -->
+
+    <nav class="navbar">
+
+
+        <!-- LOGO -->
+
+        <div class="imagen">
+
+            <img
+                src="/static/img/SIGSA.png"
+                alt="SIGSA"
+            >
+
+        </div>
+
+
+        <!-- TÍTULO -->
+
+        <div class="navbar-titulo">
+
+            <h5>
+                Catálogo de aplicaciones
+            </h5>
+
+            <span class="navbar-subtitulo">
+                Sistema de gestión de aplicaciones
+            </span>
+
+        </div>
+
+
+        <!-- FECHA -->
+
+        <div
+            class="fecha"
+            id="fecha"
+        ></div>
+
+
+        <!-- INFORMACIÓN DEL USUARIO -->
+
+        <div class="usuario-sesion">
+
+            <span
+                id="nombreUsuarioSesion"
+            ></span>
+
+            <span
+                id="cargoUsuario"
+            ></span>
+
+        </div>
+
+
+        <!-- BOTONES -->
+
+        <div class="acciones-navbar">
+
+            <a
+                id="btnConfiguracion"
+                href="/static/html/ConfigurarCatalogo.html"
+                class="btn btn-primary"
+            >
+                ⚙ Configuración
+            </a>
+
+
+            <button
+                id="btnCerrarSesion"
+                class="btn btn-salir"
+                type="button"
+            >
+                Cerrar sesión
+            </button>
+
+        </div>
+
+
+    </nav>
+
+
+    <!-- =========================
+         CONTENIDO
+    ========================== -->
+
+    <main class="catalogo-container">
+
+
+        <section class="catalogo-header">
+
+            <span class="section-label">
+
+                APLICACIONES DISPONIBLES
+
+            </span>
+
+
+            <h2>
+
+                Selecciona una aplicación
+
+            </h2>
+
+
+            <p>
+
+                Accede a las herramientas disponibles
+                dentro del sistema.
+
+            </p>
+
+        </section>
+
+
+        <!-- ESTADO DEL SISTEMA -->
+
+        <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            Sistema activo
+
+        </div>
+
+
+        <!-- TARJETAS -->
+
+        <div
+            class="tarjetaPosicion"
+            id="paginas"
+        ></div>
+
+
+    </main>
+
+
+    <!-- FECHA -->
+
+    <script>
+
+        const fechaElement =
+            document.getElementById("fecha");
+
+
+        if (fechaElement) {
+
+            fechaElement.textContent =
+                new Date().toLocaleDateString(
+                    "es-MX",
+                    {
+                        day: "2-digit",
+                        month: "long",
+                        year: "numeric"
+                    }
+                );
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
