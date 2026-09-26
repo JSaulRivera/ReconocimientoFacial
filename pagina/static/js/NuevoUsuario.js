@@ -1,6 +1,8 @@
 // ==========================================
 // ELEMENTOS HTML
 // ==========================================
+const port= window.location.port;
+let ip ="https://"+ window.location.hostname+":"+port;
 
 const video =
     document.getElementById("video");
@@ -1052,7 +1054,7 @@ function GuardarDatos() {
 
         "POST",
 
-        "http://localhost:8000/RegistrarUsuario/",
+        ip + "/RegistrarUsuario/",
 
         datosUsuario,
 

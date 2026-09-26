@@ -1,4 +1,6 @@
 let usuarioReconocido = false;
+const port= window.location.port;
+let ip ="https://"+ window.location.hostname+":"+port;
 const elVideo = document.getElementById('video')
 var usuariosBD = "";
 navigator.getMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia)
@@ -6,8 +8,7 @@ var nombreUsuario = "";
 document.getElementById("labeluser").style.visibility = 'hidden';
 document.getElementById("labelpas").style.visibility = 'hidden';
 document.getElementById("psw").style.visibility = 'hidden';
-
-
+alert(ip)
 async function init() {
     try {
         const stream = await navigator.mediaDevices.getUserMedia(constraints);
@@ -62,7 +63,7 @@ function onError() {
 }
 
 function process(callback) {
-    url = "http://localhost:8000/ConsultarUsuario/"
+    url = ip +"/ConsultarUsuario/"
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
     xhr.onreadystatechange = function () {

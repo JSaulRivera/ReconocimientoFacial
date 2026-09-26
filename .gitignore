@@ -7,6 +7,15 @@ __pycache__/
 reconocimiento-env/
 .reconocimiento-env/
 
+# ssl
+ssl/
+
+sslLocalhost/
+
+
+#certificados
+server.cer
+private.pem
 
 # Environment variables
 .env

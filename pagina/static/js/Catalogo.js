@@ -1,5 +1,6 @@
 var DatosBD = "";
-
+const port= window.location.port;
+let ip ="https://"+ window.location.hostname+":"+port;
 /* ==========================================
    DATOS DE SESIÓN
 ========================================== */
@@ -127,7 +128,7 @@ function onError() {
 function process(callback) {
 
     const url =
-        "http://localhost:8000/ConsultarCatalogo/";
+        ip + "/ConsultarCatalogo/";
 
 
     const xhr =

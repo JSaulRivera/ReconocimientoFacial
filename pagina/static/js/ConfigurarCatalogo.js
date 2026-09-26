@@ -1,7 +1,8 @@
 var DatosDB = "";
 var test2 = [];
 var lista = [];
-
+const port= window.location.port;
+let ip ="https://"+ window.location.hostname+":"+port;
 var imagen = "";
 var imagenname = "";
 var color = "";
@@ -93,7 +94,7 @@ function InsertarDatos() {
 
     consumirMetodo(
         "POST",
-        "http://localhost:8000/InsertarDemo/",
+        ip + "/InsertarDemo/",
         demo,
         onInsertItem
     );
@@ -114,7 +115,7 @@ function DatosPagina() {
     }
 
     let url =
-        "http://localhost:8000/ConsultarCatalogoID/" + id;
+        ip + "/ConsultarCatalogoID/" + id;
 
     consumirMetodo(
         "GET",
@@ -132,7 +133,7 @@ function DatosPagina() {
 function obtenerID(NombreTitulo) {
 
     let url =
-        "http://localhost:8000/ConsultarCatalogoTitulo/" +
+        ip + "/ConsultarCatalogoTitulo/" +
         encodeURIComponent(NombreTitulo);
 
     consumirMetodo(
@@ -152,7 +153,7 @@ function ConsultarDatos() {
 
     consumirMetodo(
         "GET",
-        "http://localhost:8000/ConsultarCatalogo/",
+        ip + "/ConsultarCatalogo/",
         undefined,
         onGetItems
     );
@@ -227,7 +228,7 @@ function ActualizarDatos() {
 
     consumirMetodo(
         "PUT",
-        "http://localhost:8000/ActualizarDemo/",
+        ip + "/ActualizarDemo/",
         demo,
         onInsertItem
     );
@@ -245,7 +246,7 @@ function ActualizarPosicion(tit, pos) {
 
 
     let url =
-        "http://localhost:8000/ActualizarDemoPosicion/" +
+        ip + "/ActualizarDemoPosicion/" +
         nuevaPosicion +
         "," +
         encodeURIComponent(titulo);
@@ -350,7 +351,7 @@ function confirmarEliminacion() {
 
 
     const url =
-        "http://localhost:8000/EliminarDemo/" + id;
+        ip + "/EliminarDemo/" + id;
 
 
     // Ejecutar eliminación
@@ -567,7 +568,7 @@ function onError() {
 function process(callback) {
 
     const url =
-        "http://localhost:8000/ConsultarCatalogo/";
+        ip + "/ConsultarCatalogo/";
 
 
     const xhr = new XMLHttpRequest();
